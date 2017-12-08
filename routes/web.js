@@ -24,5 +24,11 @@ module.exports = (app) =>{
         
             res.render('index/welcome');
         
-        });
+    });
+
+    app.get('/dashboard', (req, res, next)=>{
+        
+            res.render('index/dashboard');
+        
+    });
 }

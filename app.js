@@ -2,6 +2,7 @@ const express = require('express');
 const exhbs = require('express-handlebars');
 const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
+const path = require('path');
 const session = require('express-session');
 const passport = require('passport');
 
@@ -37,6 +38,8 @@ app.use((req, res, next) =>{
     res.locals.user = req.user || null;
     next(); 
 });
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 routes(app);
 
